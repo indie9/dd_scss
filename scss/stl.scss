@@ -1,0 +1,569 @@
+$primary-color: #34ACA7;
+$light-color: #EFF8F7;
+$light-active-color: #D9EFEC;
+$dark-color:black;
+$smoke-color: #e5e5e5;
+$white-color:white;
+
+@mixin flex-column {
+    display: flex;
+    flex-direction: column;
+}
+@mixin flex-row {
+    display: flex;
+    flex-direction: row;
+}
+
+
+
+/*Обнуление*/
+*{
+	padding: 0;
+	margin: 0;
+	border: 0;
+}
+*,*:before,*:after{
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+:focus,:active{outline: none;}
+a:focus,a:active{outline: none;}
+nav,footer,header,aside{display: block;}
+html,body{
+	height: 100%;
+	width: 100%;
+	font-size: 100%;
+	line-height: 1;
+	font-size: 14px;
+	-ms-text-size-adjust: 100%;
+	-moz-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+}
+input,button,textarea{font-family:inherit;}
+input::-ms-clear{display: none;}
+button{cursor: pointer;}
+button::-moz-focus-inner {padding:0;border:0;}
+a, a:visited{text-decoration: none;}
+a:hover{text-decoration: none;}
+ul li{list-style: none;}
+img{vertical-align: top;}
+h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
+/*--------------------*/
+/*/*/
+
+/*continer*/
+.container{
+    @include flex-column;
+    max-width: 1088px;  
+    width: 100%; 
+    margin: auto;   
+    align-items: center;
+}
+/**main*/
+main{
+    margin-top: 44px;
+    min-height: 1000px;
+    @include flex-row;
+}
+
+
+/*nav*/
+nav{
+    max-width: 140px;
+    margin: 18px 44px 0px 0px;
+    @include flex-column;
+
+
+       & #logo{
+            width: 120px;
+            height: 120px
+        }
+
+        & .nav-menu{
+            @include flex-column;
+        }
+        &  li a{
+            @include flex-row;
+            text-decoration: none;
+            color: $primary-color;
+            font-family: 'Arial';
+            font-style: italic;
+            font-size: 14px;
+            line-height: 30px;
+            margin-bottom: 31px;
+        }
+        & li a:hover{
+            background-color: $light-color;
+            color: black;
+        }
+        &  li img{
+            margin-right: 11px;
+            height: 30px;
+            width: 25px;
+        }
+
+        &  header{
+            font-family: 'Verdana';
+            font-style: normal;
+            font-size: 12px;
+            text-transform: uppercase;
+            border-bottom: 1px dashed $smoke-color;
+            padding-top: 5px;
+            font-weight: 400;
+        }
+        &  button{
+            width: 100%;
+            height: 30px;
+            background: $white-color;
+            border: 1px solid $smoke-color;
+            box-sizing: border-box;
+            border-radius: 5px;
+            font-family: 'Arial';
+            font-style: italic;
+            font-size: 10px;
+            line-height: 12px;
+            display: flex;
+            flex-wrap: nowrap;
+            justify-content: center;
+            align-items: center;
+            color: $primary-color;
+            margin-top: 9px;
+        }
+        &  button:hover{
+            background: $light-color;
+        }
+
+        &  svg{
+            width: 16px;
+            height: 16px;
+        
+        } 
+        &  svg path{
+            fill: $primary-color; 
+        }
+        &  p{
+            font-family: 'Arial';
+            font-style: italic;
+            font-size: 10px;
+            line-height: 19px;
+            margin-top: 10px;
+            margin-bottom: 15px;
+        }
+}
+/****************************************/
+
+ /*section*/
+ section{
+    width:100%
+}
+/**************/
+
+/*banner*/
+.banner{
+    max-width: 896px;
+    max-height: 445px;
+    height: 100%;
+    background-image: url('../img/baner.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    & .void-height{
+        height: 285px;
+        width: 10px;
+    }
+    & .header{
+        font-family: 'Arial';
+        font-style: italic;
+        display: flex;
+        align-items: center;
+        font-size: 22px;
+        line-height: 22px;
+        width: 100%;
+        max-width: 270px;
+        height: 50px;
+        background-color: $white-color;
+        padding-left: 20px;
+    }
+    & .text{
+        font-family: 'Arial';
+        font-style: italic;
+        font-size: 14px;
+        line-height: 14px;
+        display: flex;
+        align-items: center;
+        color: $white-color;
+        max-width: 487px;
+        width: 100%;
+        height: 42px;
+        background-color: $dark-color;
+        padding-left: 20px;
+    }
+}
+
+/*tabs*/
+.tabs{
+    @include flex-row;
+}
+.tab{
+        width:100%;
+        height: 85px;
+        background-color: $light-color;
+        font-family: 'Arial';
+        color: $primary-color;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-left: 20px;
+        border-left: solid 1px $white-color;
+    
+    &:hover{
+        background-color: $light-active-color;
+    }
+    &:first-child{
+        border-left: none;
+    }
+
+    & header{
+        font-style: normal;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 18px;  
+    }
+    & p{
+        font-style: italic;
+        font-weight: 400;
+        font-size: 10px;
+        line-height: 19px;
+    }
+}
+
+/****/
+
+ /*sub box*/
+.subscribe-box{
+    margin: 30px 0px;
+    padding: 8px 0;
+    border-bottom: 1px dashed $smoke-color;
+    border-top: 1px dashed  $smoke-color;
+
+        & .form{
+            @include flex-row;
+            font-size: 14px;
+            align-items: center;
+            justify-content: space-between;
+            height: 100%;
+            width: 100%;
+            
+            &-info,
+            &-input{
+                @include flex-row;
+                justify-content: space-between;
+            }
+
+            &-info{
+                width: 100%;
+                align-items: center;
+            }
+            &-input{
+                
+                min-width: 270px;
+                align-items: center;
+            }
+
+            &-info p{
+                width: 100%;
+                margin-right: 20px;
+                font-family: 'Arial';
+                font-style: italic;
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 16px;
+            }
+            & #form-img{
+                width: 65px;
+                text-align: center;
+            }
+
+
+            &-input input{
+                width: 100%;
+                min-width: 160px;
+                height: 22px;
+                border: 1px solid $smoke-color;
+                font-family: 'Arial';
+                font-size: 10px;
+                line-height: 10px;
+                color: $smoke-color;
+                padding-left: 6px;
+
+            }
+            &-input button{
+                width: 80px;
+                margin: 0 20px;
+                height: 23px;
+                background: linear-gradient(180deg, $smoke-color 0%, #BBB9B9 100%);
+                border: 1px solid $smoke-color;
+                border-radius: 2px;
+                font-family: 'Arial';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 10px;
+                line-height: 10px;
+                text-align: center;
+                
+            }
+            & button:hover{
+                background: linear-gradient(180deg, $light-active-color 0%, $primary-color 100%);
+            }
+    }
+ }
+
+
+ /*cards*/
+ .cards{
+    display: flex;
+    justify-content: space-between;   
+
+    & figure{
+    max-width: 207px;
+    width: 100%;
+    
+    }
+    & figure p{
+    border: 1px solid $smoke-color;
+    box-sizing: border-box;
+    filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.25));
+    }
+
+    & figure img{
+    border: 11px solid $white-color;
+    box-sizing: border-box;
+    width: 100%;
+    }
+    & figure header{
+    font-family: 'Arial';
+    font-style: normal;
+    font-size: 16px;
+    line-height: 21px;
+    letter-spacing: -0.02em;
+    color: $primary-color;
+    padding: 10px 0px;
+    }
+    & figcaption p {
+    font-family: 'Arial';
+    font-size: 14px;
+    line-height: 20px;
+    border: none;
+    filter: none;
+    letter-spacing: -0.02em;
+    padding-bottom: 10px;
+    max-height:120px;
+    overflow: hidden;
+    /*добавляем многоточие в вебкит бразуерах*/
+    display: -webkit-box;
+    -webkit-line-clamp: 6;
+    -webkit-box-orient: vertical;
+    padding-right: 1rem;  
+    }
+
+    & figcaption span{
+    font-family: 'Arial';
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: -0.02em;
+    color: $smoke-color;
+    }
+    & figcaption a{
+    font-family: 'Arial';
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: -0.02em;
+    color: $primary-color;
+    }
+    & figcaption a:hover{
+        color: $dark-color;
+    }
+    & figure:hover{
+    background-color: $light-color;
+    }
+
+}
+/***/
+
+
+/*footer*/
+footer{
+    margin-top: 41px;
+    padding: 0 20px;
+    width: 100%;
+    height: 92px;
+    @include flex-row;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 2px solid $smoke-color;
+
+    & svg path{
+        fill: $smoke-color;     
+    }
+    & svg path:hover{
+        fill: $primary-color;     
+    }
+    & a{
+        text-decoration: none;
+        color: $primary-color;
+        font-family: 'Arial';
+        font-size: 14px;
+        line-height: 30px;
+    }
+    & a:hover{
+        color: $dark-color;
+
+    }
+    & p{
+        font-family: 'Arial';
+        font-size: 12px;
+        line-height: 12px;
+        letter-spacing: -0.02em;
+        color: $smoke-color;
+    }
+}
+/***/
+
+@media (max-width: 1176px) {
+    .container{
+        max-width: 900px; 
+    }
+    .tab{
+        height: 35px;
+    
+        & p{
+            display: none;
+        }
+        & header{
+            font-size: 14px;
+        }
+    }
+    .cards {
+        & figure{
+            max-width: 160px;
+        }
+        & figcaption p {
+            max-height:160px;
+            -webkit-line-clamp: 8;
+        }
+    }
+}
+
+
+@media (max-width: 992px) {
+    .container{
+        max-width: 710px; 
+       
+    }
+    main{
+        margin-top: 0px;
+        flex-direction: column;
+    }
+    nav{
+        max-width: 710px;
+        width: 100%;
+        
+        margin: 20px 0 31px 0;
+        flex-direction: row;
+        justify-content: space-between;
+    
+        & .nav-menu{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+            width: 100%;
+            
+        
+        }
+        & li a{
+            margin-bottom: 0;
+            flex-direction: column;
+            align-items:center ;
+        }
+        & li img{
+            margin-right: 0;
+        }
+    }
+    .tweets,
+    .tweet-friend{
+        display: none;
+    }
+    footer{
+        padding: 5;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .container{
+        max-width: 545px; 
+       
+    }
+    nav li img{
+        display: none;
+    }
+
+    .banner {
+        & .header{
+        max-width: 545px;
+        background-color: rgba(256,256,256,0.5);
+       
+        }
+        & .text{
+            max-width: 545px;
+            font-size: 12px;
+        }
+    }
+    .tabs{
+        display: none;
+    }
+    .subscribe-box form{
+        flex-wrap: wrap;
+        
+    }
+    .form-input{
+        width: 100% ;
+        padding: 10px 10px;
+    }
+    .cards{
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+    
+        & figure{
+            max-width: 239px;
+        }
+        
+        & figcaption p {
+            height:80px;
+            -webkit-line-clamp: 4;
+        }
+    }
+}
+@media (max-width: 480px) {
+    .container{
+        max-width: 480px;  
+    }
+    nav{
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+    .nav-menu{
+        margin-bottom: 30px;
+    }
+    .cards{
+        justify-content: center;
+    }
+    .cards figure{
+        max-width: 376px;
+     }
+}
+
