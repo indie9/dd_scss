@@ -186,14 +186,34 @@ section {
   max-width: 896px;
   max-height: 445px;
   height: 100%;
-  background-image: url("../img/baner.svg");
+  background-image: url("../img/banner0.svg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
 .banner .void-height {
   height: 285px;
-  width: 10px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.banner .void-height .arrow {
+  cursor: pointer;
+  height: 50px;
+  width: 50px;
+  font-size: 40px;
+  font-weight: bolder;
+  background-color: #D9EFEC;
+  opacity: 0.2;
+  border-radius: 50%;
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+.banner:hover .arrow {
+  opacity: 0.8;
 }
 .banner .header {
   font-family: "Arial";
@@ -384,6 +404,7 @@ section {
   color: #e5e5e5;
 }
 .cards figcaption a {
+  cursor: pointer;
   font-family: "Arial";
   font-size: 14px;
   line-height: 20px;
@@ -516,6 +537,10 @@ footer p {
   .banner .text {
     max-width: 545px;
     font-size: 12px;
+  }
+  .banner .void-height .arrow {
+    display: flex;
+    flex-direction: row;
   }
 
   .tabs {

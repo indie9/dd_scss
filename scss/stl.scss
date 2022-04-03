@@ -164,14 +164,35 @@ nav{
     max-width: 896px;
     max-height: 445px;
     height: 100%;
-    background-image: url('../img/baner.svg');
+    background-image: url('../img/banner0.svg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-
+    
     & .void-height{
         height: 285px;
-        width: 10px;
+        width: 100%;
+        @include flex-row;
+        align-items: center;
+        justify-content: space-between;
+        & .arrow{
+            cursor: pointer;
+            height:50px;
+            width: 50px;
+            font-size: 40px;
+            font-weight: bolder;
+            background-color: $light-active-color;
+            opacity: 0.2;
+            border-radius: 50%;
+            display: none;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+    &:hover{
+        .arrow{
+            opacity: 0.8;
+        }
     }
     & .header{
         font-family: 'Arial';
@@ -369,18 +390,20 @@ nav{
     }
 
     & figcaption span{
-    font-family: 'Arial';
-    font-size: 14px;
-    line-height: 20px;
-    letter-spacing: -0.02em;
-    color: $smoke-color;
+        
+        font-family: 'Arial';
+        font-size: 14px;
+        line-height: 20px;
+        letter-spacing: -0.02em;
+        color: $smoke-color;
     }
     & figcaption a{
-    font-family: 'Arial';
-    font-size: 14px;
-    line-height: 20px;
-    letter-spacing: -0.02em;
-    color: $primary-color;
+        cursor: pointer;
+        font-family: 'Arial';
+        font-size: 14px;
+        line-height: 20px;
+        letter-spacing: -0.02em;
+        color: $primary-color;
     }
     & figcaption a:hover{
         color: $dark-color;
@@ -521,6 +544,12 @@ footer{
             max-width: 545px;
             font-size: 12px;
         }
+        & .void-height{
+            & .arrow{
+                display: flex;
+                flex-direction: row;
+            }
+        }
     }
     .tabs{
         display: none;
@@ -547,6 +576,7 @@ footer{
             -webkit-line-clamp: 4;
         }
     }
+
 }
 @media (max-width: 480px) {
     .container{
