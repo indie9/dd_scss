@@ -42,3 +42,7 @@ const arrowLeft = document.getElementById('arrow-left')
 const arrowRight = document.getElementById('arrow-right')
     .addEventListener("click", () => swapBanner("right"));
 
+
+//автопрокрутка
+setInterval(() => swapBanner('right'),3000);
+   
